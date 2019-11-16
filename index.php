@@ -1,7 +1,9 @@
 <?php 
 require('lib/qrlib.php');
 require('TCPDF/tcpdf.php');
-  for ($i=1; $i <100; $i++) { 
+include("config.php");
+
+  for ($i=$de; $i <$limite; $i++) { 
 	$currentQrPath = './qrimage/'.$i.'.png';
 	QRcode::png($i, $currentQrPath, QR_ECLEVEL_L, 5);
 	
@@ -16,7 +18,7 @@ require('TCPDF/tcpdf.php');
 					</td>
 				</tr>
 				<tr>
-					<td rowspan=""><img src="./qrimage/1.png"></td>
+					<td rowspan=""><img src="./qrimage/'.$i.'.png"></td>
 					<td colspan="2">Numéro ménage:	________________________ <br><br>
 						Numéro d"ordre:	________________________ <br><br>
 						Nom:	__________________________________ <br><br>
