@@ -1,7 +1,10 @@
 <?php 
+error_reporting(0);
 require('lib/qrlib.php');
 require('TCPDF/tcpdf.php');
 include("config.php");
+if(!file_exists("qrimage")) mkdir("qrimage");
+if(!file_exists("recepisses")) mkdir("recepisses");
 $i=$de;
   while ($i <= $limite) {
 
@@ -13,7 +16,6 @@ $i=$de;
 	$currentQrPathi = './qrimage/'.$ii.'.png';
 	$currentQrPathii = './qrimage/'.$iii.'.png';
 	$currentQrPathiii = './qrimage/'.$iiii.'.png';
-
 	QRcode::png($i, $currentQrPath, QR_ECLEVEL_L, 5);
 	QRcode::png($ii, $currentQrPathi, QR_ECLEVEL_L, 5);
 	QRcode::png($iii, $currentQrPathii, QR_ECLEVEL_L, 5);
@@ -174,13 +176,12 @@ $i=$de;
 	$tcpdf->writeHTML($content, true, false, false, false, '');
 
 	//Close and output PDF document
-	$outPutPath = $_SERVER['DOCUMENT_ROOT']."/qrcodeanies/recepices/".$i."_a_".$iiii.'.pdf';
+	$outPutPath = dirname(__FILE__)."/recepisses/".$i."_a_".$iiii.'.pdf';
 	$tcpdf->Output($outPutPath, 'F');
 
 	echo $i." à ".$iiii. "-----OK"."<br>";
 
 	$i = $i+4;
-	die();
 }
 ?>
 
