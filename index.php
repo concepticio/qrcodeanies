@@ -2,48 +2,154 @@
 require('lib/qrlib.php');
 require('TCPDF/tcpdf.php');
 include("config.php");
+$i=$de;
+  while ($i <= $limite) {
 
-  for ($i=$de; $i <$limite; $i++) { 
+  	$ii = $i+1;
+  	$iii = $i+2;
+  	$iiii = $i+3;
+
 	$currentQrPath = './qrimage/'.$i.'.png';
+	$currentQrPathi = './qrimage/'.$ii.'.png';
+	$currentQrPathii = './qrimage/'.$iii.'.png';
+	$currentQrPathiii = './qrimage/'.$iiii.'.png';
+
 	QRcode::png($i, $currentQrPath, QR_ECLEVEL_L, 5);
+	QRcode::png($ii, $currentQrPathi, QR_ECLEVEL_L, 5);
+	QRcode::png($iii, $currentQrPathii, QR_ECLEVEL_L, 5);
+	QRcode::png($iiii, $currentQrPathiii, QR_ECLEVEL_L, 5);
 	
-	$content = '<table cellspacing="0" cellpadding="1">
-				<tr>
-					<td  colspan="3" align="center">
-						<b> REPUBLIQUE DE GUINEE </b> <br>
-						<b> PRIMATURE </b> <br>
-						<b> Agence Nationale D’inclusion Economique Et Sociale (ANIES) </b> 
-						<br>
-							<hr/>
-					</td>
-				</tr>
-				<tr>
-					<td rowspan=""><img src="./qrimage/'.$i.'.png"></td>
-					<td colspan="2">Numéro ménage:	________________________ <br><br>
-						Numéro d"ordre:	________________________ <br><br>
-						Nom:	__________________________________ <br><br>
-						Prénoms:	_______________________________ <br>
-			<br>
-					</td>
-					
-				</tr>
+	$content = '<table>
+					<tr>
+						<td width="49%">
+							<table cellspacing="0" cellpadding="1">
+								<tr>
+									<td  colspan="3" align="center">
+										<b> REPUBLIQUE DE GUINEE </b> <br>
+										<b> PRIMATURE </b> <br>
+										<b> Agence Nationale d’Inclusion Economique et Sociale (ANIES)</b> <br>
+										<b> Récépissé d\'inscription</b> <br>
+											<hr/>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan=""><img src="./qrimage/'.$i.'.png"></td>
+									<td colspan="2">Numéro ménage:	________________________ <br><br>
+										Numéro d"ordre:	________________________ <br><br>
+										Nom:	__________________________________ <br><br>
+										Prénoms:	_______________________________ <br>
+									<br>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+										</td>
+								</tr>
+							</table>
+						</td>
 
-				<tr>
-					<td colspan="3">
-<br>
-<hr>
-					Attention!! Ce Récépicé est personnel et ne doit pas être utilisé par une autre personne.
-					</td>
-				</tr>
-			</table>';
+						<td width="49%">
+							<table cellspacing="0" cellpadding="1">
+								<tr>
+									<td  colspan="3" align="center">
+										<b> REPUBLIQUE DE GUINEE </b> <br>
+										<b> PRIMATURE </b> <br>
+										<b> Agence Nationale d’Inclusion Economique Et Sociale (ANIES) </b> 
+										<br>
+										<b> Récépissé d\'inscription</b> <br>
+											<hr/>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="1"><img src="./qrimage/'.$ii.'.png"></td>
+									<td colspan="2">Numéro ménage:	________________________ <br><br>
+										Numéro d"ordre:	________________________ <br><br>
+										Nom:	__________________________________ <br><br>
+										Prénoms:	_______________________________ <br>
+								<br></td>
+								</tr>
+								<tr>
+									<td colspan="3"><br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				 <br>
+				  <br>
+				  <br>
+				  <br>
+				<table>
+					<tr>
+						<td width="49%">
+							<table cellspacing="0" cellpadding="1">
+								<tr>
+									<td  colspan="3" align="center">
+										<b> REPUBLIQUE DE GUINEE </b> <br>
+										<b> PRIMATURE </b> <br>
+										<b> Agence Nationale d’Inclusion Economique Et Sociale (ANIES)</b> 
+										<br>
+										<b> Récépissé d\'inscription</b> <br>
+											<hr/>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="1"><img src="./qrimage/'.$iii.'.png"></td>
+									<td colspan="2">Numéro ménage:	________________________ <br><br>
+										Numéro d"ordre:	________________________ <br><br>
+										Nom:	__________________________________ <br><br>
+										Prénoms:	_______________________________ <br>
+									<br>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="3">
+										<br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+										</td>
+								</tr>
+							</table>
+						</td>
 
-	$tcpdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A6', true, 'UTF-8', false);
+						<td width="49%">
+							<table cellspacing="0" cellpadding="1">
+								<tr>
+									<td  colspan="3" align="center">
+										<b> REPUBLIQUE DE GUINEE </b> <br>
+										<b> PRIMATURE </b> <br>
+										<b> Agence Nationale d’Inclusion Economique Et Sociale (ANIES) </b> 
+										<br>
+										<b> Récépissé d\'inscription</b> <br>
+											<hr/>
+									</td>
+								</tr>
+								<tr>
+									<td rowspan="1"><img src="./qrimage/'.$iiii.'.png"></td>
+									<td colspan="2">Numéro ménage:	________________________ <br><br>
+										Numéro d"ordre:	________________________ <br><br>
+										Nom:	__________________________________ <br><br>
+										Prénoms:	_______________________________ <br>
+								<br></td>
+								</tr>
+								<tr>
+									<td colspan="3"><br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			';
+			//echo $content;die();
+
+	$tcpdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 
 	// set default monospaced font
 	$tcpdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 	// set title of pdf
-	$tcpdf->SetTitle('Récépicé PMT');
+	$tcpdf->SetTitle('récépissé PMT');
 
 	// set margins
 	$tcpdf->SetMargins(10, 10, 10, 10);
@@ -68,10 +174,16 @@ include("config.php");
 	$tcpdf->writeHTML($content, true, false, false, false, '');
 
 	//Close and output PDF document
-	$outPutPath = $_SERVER['DOCUMENT_ROOT']."/qrcodeanies/recepices/".$i.'.pdf';
+	$outPutPath = $_SERVER['DOCUMENT_ROOT']."/qrcodeanies/recepices/".$i."_a_".$iiii.'.pdf';
 	$tcpdf->Output($outPutPath, 'F');
 
-	echo $outPutPath. "-----OK"."<br>";
+	echo $i." à ".$iiii. "-----OK"."<br>";
+
+	$i = $i+4;
+	die();
 }
 ?>
+
+
+	
 

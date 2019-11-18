@@ -1,7 +1,7 @@
 <?php 
 
 
-$de =1; //le premier numéro à générer
-$limite = 100; // et le dernier numéro à générer
+$de =14353; //le premier numéro à générer
+$limite = 14453; // et le dernier numéro à générer
 
  ?>
