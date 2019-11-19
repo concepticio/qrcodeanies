@@ -35,17 +35,21 @@ $i=$de;
 									</td>
 								</tr>
 								<tr>
-									<td rowspan=""><img src="./qrimage/'.$i.'.png"></td>
-									<td colspan="2">Numéro ménage:	________________________ <br><br>
+									<td align="center">
+									<img src="./qrimage/'.$i.'.png">
+									'.$i.'
+
+									</td>
+									<td colspan="2"><br><br>
+										Numéro ménage:	________________________ <br><br>
 										Numéro d"ordre:	________________________ <br><br>
 										Nom:	__________________________________ <br><br>
 										Prénoms:	_______________________________ <br>
-									<br>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="3">
-										<br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+										<br><hr><br>Ce récépissé est strictement personnel et à conserver soigneusement est personnel.
 										</td>
 								</tr>
 							</table>
@@ -64,15 +68,19 @@ $i=$de;
 									</td>
 								</tr>
 								<tr>
-									<td rowspan="1"><img src="./qrimage/'.$ii.'.png"></td>
-									<td colspan="2">Numéro ménage:	________________________ <br><br>
+									<td align="center" rowspan="1"><img src="./qrimage/'.$ii.'.png">
+									'.$ii.'
+
+									</td>
+									<td colspan="2"><br><br>
+										Numéro ménage:	________________________ <br><br>
 										Numéro d"ordre:	________________________ <br><br>
 										Nom:	__________________________________ <br><br>
 										Prénoms:	_______________________________ <br>
-								<br></td>
+								</td>
 								</tr>
 								<tr>
-									<td colspan="3"><br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+									<td colspan="3"><br><hr><br>Ce récépissé est strictement personnel et à conserver soigneusement est personnel.
 									</td>
 								</tr>
 							</table>
@@ -98,17 +106,20 @@ $i=$de;
 									</td>
 								</tr>
 								<tr>
-									<td rowspan="1"><img src="./qrimage/'.$iii.'.png"></td>
-									<td colspan="2">Numéro ménage:	________________________ <br><br>
+									<td align="center" rowspan="1"><img src="./qrimage/'.$iii.'.png">
+									'.$iii.'
+
+									</td>
+									<td colspan="2"><br><br>
+										Numéro ménage:	________________________ <br><br>
 										Numéro d"ordre:	________________________ <br><br>
 										Nom:	__________________________________ <br><br>
 										Prénoms:	_______________________________ <br>
-									<br>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="3">
-										<br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+										<br><hr><br>Ce récépissé est strictement personnel et à conserver soigneusement est personnel.
 										</td>
 								</tr>
 							</table>
@@ -127,15 +138,21 @@ $i=$de;
 									</td>
 								</tr>
 								<tr>
-									<td rowspan="1"><img src="./qrimage/'.$iiii.'.png"></td>
-									<td colspan="2">Numéro ménage:	________________________ <br><br>
+									<td align="center" rowspan="1" >
+									<img src="./qrimage/'.$iiii.'.png">
+									'.$iiii.'
+
+									</td>
+									<td colspan="2"><br><br>
+										Numéro ménage:	________________________ <br><br>
 										Numéro d"ordre:	________________________ <br><br>
 										Nom:	__________________________________ <br><br>
 										Prénoms:	_______________________________ <br>
-								<br></td>
+								</td>
 								</tr>
 								<tr>
-									<td colspan="3"><br><hr>Attention!! Ce récépissé à conserver soigneusement est personnel et ne doit pas être utilisé par une autre personne.
+									<td colspan="3"><br><hr><br>
+									Ce récépissé est strictement personnel et à conserver soigneusement est personnel.
 									</td>
 								</tr>
 							</table>
@@ -143,7 +160,7 @@ $i=$de;
 					</tr>
 				</table>
 			';
-			//echo $content;die();
+			// echo $content;die();
 
 	$tcpdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, 'A4', true, 'UTF-8', false);
 
