@@ -11,7 +11,7 @@ $sousPrefs =$pdo->query('select distinct id_sp,concat(nom_reg," / ",nom_pref," /
 include('formulaire.php');
 
 
-if(isset($_POST['sousprefecture']) && isset($_POST['menages'])){
+if(isset($_POST['codezone']) && isset($_POST['menages'])){
 
 	if(trim(str_replace(' ', '', $_POST['sousprefecture']))>1100 && $_POST['menages'] >0){
 
@@ -27,10 +27,9 @@ if(isset($_POST['sousprefecture']) && isset($_POST['menages'])){
 
 
 		//selection des zones
-		$zones = $pdo->query('select * from zones where id_sp="'.$codeSousPrefecture.'"')->fetchAll(PDO::FETCH_OBJ);
+		$zones = $pdo->query('select * from zones where id="'.$_POST['codezone'].'"')->fetchAll(PDO::FETCH_OBJ); // cette requête ne donne qu'une seule zone
 
 			foreach ($zones as $key => $zone) {
-				// var_dump($maxMenage);die();
 					$k = $zone->id.'0001';
 					$k = (int) $k;
 					$max = $k+$maxMenage;
@@ -44,7 +43,7 @@ if(isset($_POST['sousprefecture']) && isset($_POST['menages'])){
 			}
 
 	}else{
-		$error = "le code sous prefecture et/ou la valeur saisie ne sont pas correct";
+		$error = "le code code zone et/ou la valeur saisie ne sont pas corrects";
 	}
 }
 ?>
